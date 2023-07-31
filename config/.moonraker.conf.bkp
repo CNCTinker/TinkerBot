@@ -1,0 +1,17 @@
+[server]
+host = 127.0.0.1
+port = 7125
+
+[authorization]
+cors_domains = 
+	http://my.mainsail.xyz
+trusted_clients = 
+	127.0.0.0/24
+
+[file_manager]
+
+[machine]
+provider = systemd_cli
+
+[history]
+

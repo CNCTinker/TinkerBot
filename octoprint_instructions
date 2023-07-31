@@ -1,0 +1,10 @@
+Octoprint
+
+OCTOPRINT:
+python3 -m venv OctoPrint
+./Octoprint/bin/pip install Octoprint
+Start Octoprint ==> ./OctoPrint/bin/octoprint serve
+
+Settings -> Serial Connection -> Behaviour
+What to do on a firmware error (Error: or !!)
+*Cancel any ongoing prints but stay connected to the printer

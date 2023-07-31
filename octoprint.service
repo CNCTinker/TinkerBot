@@ -1,0 +1,15 @@
+#Systemd service file for octoprint
+[Unit]
+Description=Starts octoprint on startup
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=sorin
+RemainAfterExit=yes
+ExecStart=/mnt/d/3d_printer/Firmware/octoprint/bin/octoprint serve
+Restart=always
+RestartSec=10
