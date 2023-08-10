@@ -1,12 +1,13 @@
 [server]
-host = 127.0.0.1
+host = 0.0.0.0
 port = 7125
 
 [authorization]
 cors_domains = 
-	http://my.mainsail.xyz
+	*://my.mainsail.xyz
 trusted_clients = 
-	127.0.0.0/24
+	127.0.0.0/8
+	192.168.0.0/16
 
 [file_manager]
 

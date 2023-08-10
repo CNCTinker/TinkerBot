@@ -12,7 +12,8 @@ git clone https://github.com/KevinOConnor/klipper
 git clone https://github.com/Arksine/moonraker.git
 
 https://github.com/mainsail-crew/mainsail/releases
-wget https://github.com/mainsail-crew/mainsail/releases/download/v2.6.0/mainsail.zip
+wget https://github.com/mainsail-crew/mainsail/releases/download/v2.6.2/mainsail.zip
+unzip -b mainsail mainsail.zip
 
 python3 -m venv klipper-env
 python3 -m venv moonraker-env
@@ -20,7 +21,6 @@ python3 -m venv moonraker-env
 ./klipper-env/bin/pip install -r ./klipper/scripts/klippy-requirements.txt
 ./moonraker-env/bin/pip install -r ./moonraker/scripts/moonraker-requirements.txt
 
-///// /klipper/scripts/install_debian
 ///// https://moonraker.readthedocs.io/en/latest/installation/
 
 printer.config
