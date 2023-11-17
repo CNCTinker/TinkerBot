@@ -48,7 +48,7 @@ ln -s /mnt/d/3d_printer/Firmware/config/ /home/$USER/printer_data/config
 sudo systemctl restart moonraker
 
 MainSail - enable virtual site + dns record
-=====================================================
+========================================================
 sudo apt install apache2
 sudo echo "127.0.0.1 my.mainsail.xyz" >> /etc/hosts
 cp my.mainsail.xyz.conf /etc/apache2/sites-available/
