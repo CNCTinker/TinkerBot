@@ -7,10 +7,10 @@ After=network.target
 WantedBy=multi-user.target
 
 [Service]
-Environment=KLIPPER_CONFIG=/mnt/d/3d_printer/Firmware/config/printer.cfg
+Environment=KLIPPER_CONFIG=/media/data/3d_printer/Firmware/config/printer.cfg
 Type=simple
 User=sorin
 RemainAfterExit=yes
-ExecStart=/mnt/d/3d_printer/Firmware/klipper-env/bin/python /mnt/d/3d_printer/Firmware/klipper/klippy/klippy.py ${KLIPPER_CONFIG} -l /tmp/klippy.log -a /tmp/klippy_uds
+ExecStart=/media/data/3d_printer/Firmware/klipper-env/bin/python /media/data/3d_printer/Firmware/klipper/klippy/klippy.py ${KLIPPER_CONFIG} -l /tmp/klippy.log -a /tmp/klippy_uds
 Restart=always
 RestartSec=10

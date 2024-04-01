@@ -11,6 +11,6 @@ WantedBy=multi-user.target
 Type=simple
 User=sorin
 RemainAfterExit=yes
-ExecStart=/mnt/d/3d_printer/Firmware/moonraker-env/bin/python /mnt/d/3d_printer/Firmware/moonraker/moonraker/moonraker.py -c /mnt/d/3d_printer/Firmware/config/moonraker.conf -l /tmp/moonraker.log
+ExecStart=/media/data/3d_printer/Firmware/moonraker-env/bin/python /media/data/3d_printer/Firmware/moonraker/moonraker/moonraker.py -c /media/data/3d_printer/Firmware/config/moonraker.conf -l /tmp/moonraker.log
 Restart=always
 RestartSec=10
