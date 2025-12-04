@@ -1,0 +1,73 @@
+Install platformio
+---------------------
+phyton3 -m venv platformio
+source platformio/bin/activate
+pip install platformio
+
+Create platformio project
+------------------------
+mkdir esp_raw_bridge
+cd esp_raw_bridge
+pio init --board esp01_1m
+
+copy to esp_raw_bridge/ - platformio.ini
+copy to esp_raw_bridge/src/  - main.cpp
+
+Compile:
+pio run -e esp01_1m
+Erase flash:
+esptool.py --port /dev/ttyUSB0 erase_flash
+Upload:
+pio run -e esp01_1m -t upload --upload-port /dev/ttyUSB0
+
+esp32
+pio run -e esp32_klipper_bridge
+pio run -e esp32_klipper_bridge -t upload --upload-port /dev/ttyUSB0
+
+
+Test:
+telnet IP 8888
+Open serial - I prefer CuteCom GUI, but can use
+screen /dev/ttyUSB0 115200
+
+Now type something in telnet and serial, and you should see it on the other side.
+
+Now for KLIPPER
+Connect RX,TX and power to ESP6288
+
+Serial to TCP bridge on host running klipper - SOCAT
+====================================================
+manual for testing
+--------------------
+/usr/bin/socat -d -d \
+    pty,raw,echo=0,mode=666,link=/tmp/espbridge \
+    tcp:192.168.4.1:8888,nodelay
+
+service permanent use
+----------------------
+copy espbridge.service to /etc/systemd/system/
+sudo copy espbridge.service /etc/systemd/system/
+sudo systemctl enable espbridge
+sudo systemctl start espbridge
+
+klipper config:
+[mcu]
+serial: /tmp/espbridge
+
+------
+Extra info If you want to experiment with ESP6288
+ESP6288 Chip connection
+
+3v3, EN -> 3V
+TX      -> RX
+RX		-> TX
+GND,IO0	-> GND
+
+IO0 -> GND -- programming mode
+IO0 -> 3.3V -- normal boot mode
+
+RST	- via button - GND - when you press button it resets
+
+#define AP_SSID       "3D_Printer"  // <-- CHOOSE YOUR AP NAME
+#define AP_PASS       "CNCTinker" // <-- CHOOSE YOUR AP PASSWORD
+#define SERIAL_BAUD   500000   // Highly recommended speed 

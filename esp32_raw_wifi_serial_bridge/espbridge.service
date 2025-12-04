@@ -1,0 +1,15 @@
+[Unit]
+Description=Socat Klipper TCP to UART bridge
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/socat -d -d \
+    pty,raw,echo=0,mode=666,link=/tmp/espbridge \
+    tcp:192.168.4.1:8888,nodelay
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
