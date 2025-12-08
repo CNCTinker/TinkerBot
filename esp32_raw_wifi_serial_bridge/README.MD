@@ -18,15 +18,15 @@ pio run -e esp32_klipper_bridge
 pio run -e esp32_klipper_bridge -t upload --upload-port /dev/ttyUSB0  
 *change ttyUSB0 to what your device is - ussualy is this, can be 1,2 etc if you have more usb-serial devices connected
 
-Optional test (only if you built it yourself, the one provided lower I already test it and it works).
-connect to 3D_Printer AP, password: CNCTinker --- see main.cpp source code.
-ip a 
-	-- should show 192.168.4.2
-telnet 192.168.4.1 8888
-Open serial - I prefer CuteCom GUI, but can use a console serial like
-screen /dev/ttyUSB0 500000
-*Note: you need a Serial-to-USB converter for this connected to pins 16,17 of esp32 (see source code).
-Now type something in telnet and serial, and you should see it on the other side.
+Optional test (only if you built it yourself, the one provided lower I already test it and it works).  
+connect to 3D_Printer AP, password: CNCTinker --- see main.cpp source code.  
+ip a   
+	-- should show 192.168.4.2  
+telnet 192.168.4.1 8888  
+Open serial - I prefer CuteCom GUI, but can use a console serial like  
+screen /dev/ttyUSB0 500000  
+*Note: you need a Serial-to-USB converter for this connected to pins 16,17 of esp32 (see source code).  
+Now type something in telnet and serial, and you should see it on the other side.  
 
 
 Just burn the pre-built firmware to ESP32
