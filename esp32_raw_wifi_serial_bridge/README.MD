@@ -1,4 +1,4 @@
-Just burn the pre-built firmware to ESP32
+Burn the pre-built firmware to ESP32
 =========================================
 Download from here the files: bootloader.bin, partition.bin, firmware.bin
 Erase flash: esptool.py --port /dev/ttyUSB0 erase_flash
@@ -18,7 +18,19 @@ esptool.py \
     0x8000 partition.bin \
     0x10000 firmware.bin
 
-Now for KLIPPER
+Next build KLIPPER for SERIAL communication
+-------------------------------------------
+git clone https://github.com/KevinOConnor/klipper  
+cd klipper  
+make menuconfig  
+make  
+*Note* - you might need for make command: sudo apt install gcc-arm-none-eabi  
+
+keep pressing BOOT button when you power the pico and it will boot in usb mass storage mode.   
+copy ./klipper/out/klipper.uf2 ===> usb mass storage  
+it dissapears = ok  
+
+Now for KLIPPER connect ESP32 to your MCU running Klipper pins (the ones you select in klipper)
 Connect RX->TX,TX->RX and 5v, GND to ESP32
 
 Serial to TCP bridge on host running klipper - SOCAT
@@ -60,7 +72,8 @@ pio run -e esp32_klipper_bridge
 pio run -e esp32_klipper_bridge -t upload --upload-port /dev/ttyUSB0  
 *change ttyUSB0 to what your device is - ussualy is this, can be 1,2 etc if you have more usb-serial devices connected
 
-Optional test (only if you built it yourself, the one provided lower I already test it and it works).  
+Test it
+-------------------------
 connect to 3D_Printer AP, password: CNCTinker --- see main.cpp source code.  
 ip a   
 	-- should show 192.168.4.2  
