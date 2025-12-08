@@ -2,20 +2,20 @@ Manual build the firmware:
 ===================================
 Install platformio
 ---------------------
-phyton3 -m venv platformio
-source platformio/bin/activate
-pip install platformio
+phyton3 -m venv platformio  
+source platformio/bin/activate  
+pip install platformio  
 
 Create platformio project
 ------------------------
-mkdir esp_raw_bridge
-cd esp_raw_bridge
-pio init --board esp32dev
-copy to src/  - main.cpp
+mkdir esp_raw_bridge  
+cd esp_raw_bridge  
+pio init --board esp32dev  
+copy to src/  - main.cpp  
 
-Compile then upload
-pio run -e esp32_klipper_bridge
-pio run -e esp32_klipper_bridge -t upload --upload-port /dev/ttyUSB0
+Compile then upload  
+pio run -e esp32_klipper_bridge  
+pio run -e esp32_klipper_bridge -t upload --upload-port /dev/ttyUSB0  
 *change ttyUSB0 to what your device is - ussualy is this, can be 1,2 etc if you have more usb-serial devices connected
 
 Just burn the firmware to ESP32
