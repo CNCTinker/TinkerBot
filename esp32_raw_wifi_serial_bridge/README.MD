@@ -18,7 +18,7 @@ esptool.py \
     0x8000 partition.bin \
     0x10000 firmware.bin
 
-Next build KLIPPER for SERIAL communication
+Build KLIPPER for SERIAL communication
 -------------------------------------------
 git clone https://github.com/KevinOConnor/klipper  
 cd klipper  
