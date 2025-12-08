@@ -22,7 +22,9 @@ Next build KLIPPER for SERIAL communication
 -------------------------------------------
 git clone https://github.com/KevinOConnor/klipper  
 cd klipper  
-make menuconfig  
+make menuconfig 
+=> Communication Interface (UART0 on GPIO0/GPIO1)  
+=> (500000) Baud rate for serial port   
 make  
 *Note* - you might need for make command: sudo apt install gcc-arm-none-eabi  
 
@@ -30,7 +32,7 @@ keep pressing BOOT button when you power the pico and it will boot in usb mass s
 copy ./klipper/out/klipper.uf2 ===> usb mass storage  
 it dissapears = ok  
 
-Now for KLIPPER connect ESP32 to your MCU running Klipper pins (the ones you select in klipper)
+Now for KLIPPER connect ESP32 to your MCU running Klipper pins (the ones you select in klipper)  
 Connect RX->TX,TX->RX and 5v, GND to ESP32
 
 Serial to TCP bridge on host running klipper - SOCAT
