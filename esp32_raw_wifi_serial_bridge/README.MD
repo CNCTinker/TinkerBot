@@ -18,8 +18,8 @@ pio run -e esp32_klipper_bridge
 pio run -e esp32_klipper_bridge -t upload --upload-port /dev/ttyUSB0  
 *change ttyUSB0 to what your device is - ussualy is this, can be 1,2 etc if you have more usb-serial devices connected
 
-Just burn the firmware to ESP32
-====================================== 
+Just burn the pre-built firmware to ESP32
+=========================================
 Erase flash: esptool.py --port /dev/ttyUSB0 erase_flash
 Burn firmware:
 esptool.py \
