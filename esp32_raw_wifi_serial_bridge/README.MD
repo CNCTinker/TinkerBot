@@ -22,7 +22,7 @@ Build KLIPPER for SERIAL communication
 -------------------------------------------
 git clone https://github.com/KevinOConnor/klipper  
 cd klipper  
-make menuconfig 
+make menuconfig  
 => Communication Interface (UART0 on GPIO0/GPIO1)  
 => (500000) Baud rate for serial port   
 make  
