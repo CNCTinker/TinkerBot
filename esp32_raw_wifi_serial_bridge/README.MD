@@ -1,8 +1,8 @@
 Burn the pre-built firmware to ESP32
 =========================================
-Download from here the files: bootloader.bin, partition.bin, firmware.bin
-Erase flash: esptool.py --port /dev/ttyUSB0 erase_flash
-Burn firmware:
+Download from here the files: bootloader.bin, partition.bin, firmware.bin  
+Erase flash: esptool.py --port /dev/ttyUSB0 erase_flash  
+Burn firmware:  
 esptool.py \
     --chip esp32 \
     -p /dev/ttyUSB0 \
